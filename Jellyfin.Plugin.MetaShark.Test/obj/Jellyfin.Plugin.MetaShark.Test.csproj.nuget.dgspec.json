@@ -1,0 +1,264 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\Jellyfin.Plugin\\jellyfin-plugin-DLGetchu-main\\Jellyfin.Plugin.MetaShark.Test\\Jellyfin.Plugin.MetaShark.Test.csproj": {}
+  },
+  "projects": {
+    "E:\\Jellyfin.Plugin\\jellyfin-plugin-DLGetchu-main\\AnitomySharp\\AnitomySharp.csproj": {
+      "version": "0.4.0",
+      "restore": {
+        "projectUniqueName": "E:\\Jellyfin.Plugin\\jellyfin-plugin-DLGetchu-main\\AnitomySharp\\AnitomySharp.csproj",
+        "projectName": "AnitomySharp.NET6",
+        "projectPath": "E:\\Jellyfin.Plugin\\jellyfin-plugin-DLGetchu-main\\AnitomySharp\\AnitomySharp.csproj",
+        "packagesPath": "C:\\Users\\RainbowRunner\\.nuget\\packages\\",
+        "outputPath": "E:\\Jellyfin.Plugin\\jellyfin-plugin-DLGetchu-main\\AnitomySharp\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\RainbowRunner\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Jellyfin.Plugin\\jellyfin-plugin-DLGetchu-main\\Jellyfin.Plugin.DLGetchu\\Jellyfin.Plugin.DLGetchu.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Jellyfin.Plugin\\jellyfin-plugin-DLGetchu-main\\Jellyfin.Plugin.DLGetchu\\Jellyfin.Plugin.DLGetchu.csproj",
+        "projectName": "Jellyfin.Plugin.DLGetchu",
+        "projectPath": "E:\\Jellyfin.Plugin\\jellyfin-plugin-DLGetchu-main\\Jellyfin.Plugin.DLGetchu\\Jellyfin.Plugin.DLGetchu.csproj",
+        "packagesPath": "C:\\Users\\RainbowRunner\\.nuget\\packages\\",
+        "outputPath": "E:\\Jellyfin.Plugin\\jellyfin-plugin-DLGetchu-main\\Jellyfin.Plugin.DLGetchu\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\RainbowRunner\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "E:\\Jellyfin.Plugin\\jellyfin-plugin-DLGetchu-main\\AnitomySharp\\AnitomySharp.csproj": {
+                "projectPath": "E:\\Jellyfin.Plugin\\jellyfin-plugin-DLGetchu-main\\AnitomySharp\\AnitomySharp.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "AngleSharp": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
+            "ILRepack.Lib.MSBuild.Task": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.32, )"
+            },
+            "Jellyfin.Controller": {
+              "target": "Package",
+              "version": "[10.*-*, )"
+            },
+            "Jellyfin.Model": {
+              "target": "Package",
+              "version": "[10.*-*, )"
+            },
+            "RateLimiter": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "SerilogAnalyzer": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[0.15.0, )"
+            },
+            "SmartAnalyzers.MultithreadingAnalyzer": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.31, )"
+            },
+            "StyleCop.Analyzers": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.376, )"
+            },
+            "TMDbLib": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Jellyfin.Plugin\\jellyfin-plugin-DLGetchu-main\\Jellyfin.Plugin.MetaShark.Test\\Jellyfin.Plugin.MetaShark.Test.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Jellyfin.Plugin\\jellyfin-plugin-DLGetchu-main\\Jellyfin.Plugin.MetaShark.Test\\Jellyfin.Plugin.MetaShark.Test.csproj",
+        "projectName": "Jellyfin.Plugin.MetaShark.Test",
+        "projectPath": "E:\\Jellyfin.Plugin\\jellyfin-plugin-DLGetchu-main\\Jellyfin.Plugin.MetaShark.Test\\Jellyfin.Plugin.MetaShark.Test.csproj",
+        "packagesPath": "C:\\Users\\RainbowRunner\\.nuget\\packages\\",
+        "outputPath": "E:\\Jellyfin.Plugin\\jellyfin-plugin-DLGetchu-main\\Jellyfin.Plugin.MetaShark.Test\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\RainbowRunner\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "E:\\Jellyfin.Plugin\\jellyfin-plugin-DLGetchu-main\\Jellyfin.Plugin.DLGetchu\\Jellyfin.Plugin.DLGetchu.csproj": {
+                "projectPath": "E:\\Jellyfin.Plugin\\jellyfin-plugin-DLGetchu-main\\Jellyfin.Plugin.DLGetchu\\Jellyfin.Plugin.DLGetchu.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[2.2.8, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[2.2.8, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.1.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.18.2, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
