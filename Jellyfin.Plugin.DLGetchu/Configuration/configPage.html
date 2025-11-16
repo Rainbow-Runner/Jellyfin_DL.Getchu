@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Template</title>
+</head>
+
+<body>
+    <div id="TemplateConfigPage" data-role="page" class="page type-interior pluginConfigurationPage"
+        data-require="emby-input,emby-button,emby-select,emby-checkbox">
+        <div data-role="content">
+            <div class="content-primary">
+
+                <div class="verticalSection verticalSection">
+                    <div class="sectionTitleContainer flex align-items-center">
+                        <h2 class="sectionTitle">MetaShark 配置</h2><span id="current_version" name="current_version"
+                            is="emby-linkbutton" class="emby-button"></span>
+                        <a is="emby-linkbutton" class="raised button-alt headerHelpButton emby-button" target="_blank"
+                            href="https://github.com/cxfksword/jellyfin-plugin-metashark">源码</a>
+                    </div>
+                </div>
+
+                <form id="TemplateConfigForm">
+                    <fieldset class="verticalSection verticalSection-extrabottompadding">
+                        <legend>
+                            <h3>豆瓣</h3>
+                        </legend>
+                        <div class="inputContainer">
+                            <label class="inputLabel inputLabelUnfocused" for="DoubanCookies">豆瓣网站cookie<span
+                                id="login_msg"
+                                style="margin-left: 8px; display: none;"></span></label>
+                            <textarea rows="5" is="emby-input" type="text" id="DoubanCookies" name="DoubanCookies"
+                                class="emby-input" placeholder="_vwo_uuid_v2=1; __utmv=2; ..."></textarea>
+                            <div class="fieldDescription">可为空，填写可搜索到需登录访问的影片，使用(www.douban.com)分号“;”分隔格式cookie.</div>
+                        </div>
+                        <div class="checkboxContainer checkboxContainer-withDescription">
+                            <label class="emby-checkbox-label" for="EnableDoubanAvoidRiskControl">
+                                <input id="EnableDoubanAvoidRiskControl" name="EnableDoubanAvoidRiskControl"
+                                    type="checkbox" is="emby-checkbox" />
+                                <span class="checkboxLabel" style="position:relative">启用防封禁
+                                    <img style="position: absolute; top:-12px; width: 32px; height:32px"
+                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAABS9JREFUeF7tmWtoHFUUx/9ndne2NmLph5q0yc4m1SSzMS2opRIpGEGLtWotqBS0NIIgCCotVD+aItSi+EB80S8V0YgKWouPNhUMqbWKsWqpya5pQjITRb8IKsruzO4cuXcf7m42yTRkgzs799Puzp17z/md/zn3sYQ6b1Tn/sMH4Cugzgn4KVDnAvCLoJ8CfgrUOQE/BepcAP4q4KeAnwJ1TsBPgToXwMWtAudbG5oCGfsVIlwHYF2NwPsFwIhuWDsq2es6BUbWYWVDUP2CgKtrxPFZZuqGNctf1wDGNLWfgCdq1fmc3e/phnVPsQ+uASQ09TwDV9UyAAb/FjPspkUBiGsq17LzedvL08C1AnwAFRTAwIGYYfULuvFI6HMQ9f7fVbKkCqg2ADF+gHlaVULHk449sBSAaw7AUiuspgAQ0N9pWAeWMsWWA8AZBgaJ0Q4F3WBsrFAXvgVwAcA0QJcBvBbM14NoTaEv8xARDZUAyD8srTXfAJgUYxFoNYObAdw6Vy2qKgCGcihmpk7kJ59sa2i0HPs1MO4s2M60r9NMPV9u4MR6rLLt0EEQPSSeVdq1id+LNmSmw3iky7SOlo81poWuJZDYtN1e/qxqAEbbVkSDdqYpHVA2Bck53TFlf581WBozIg1hDOimda/4KM4VQcfeS8A/9qXWU92jsKTUNXVM+M+Oc6P4HptJD8lxWoLZFUZReuWOlHCfPm29JX4ajai7CLgDhHOZoDLQPZk0pqIr1yY5LYKxoRhC1QAkoupOZryfn0xh54YOMz2cc+qYiIZCdFvHdOrj8Sasyajq1wDasv3ptG6ktkhnWtSdipIdZ55V5g8AwyA6pTg84xAGCk4SvapPp6SKEpp6hIG+ZQEQ19Q3AcjoSuOZX4qZ9sMSQCT0spB2QLVWtV/An/GI+iQRtGLDHMbxmGm9PdESbrcV/mkBAFlsQJIJBjv4kcCD6YB6tHvq71/z41Y6v1RNAXFN/RBChrlGwDudhrVLyldTDxKwVTesTcVOV/o8fiXCGUtNLgSAGR+kQfs3mKmJgsMtwV5SaIdu2Htz8846wFUNwFg09BwxyYlzGnhRN+xHC1Jk3q6b9uXyezT0ADv/qWUWiFyVnycFTuiGdYt0snVFKxynTwG2MbAZzEO6acv6sawKSGjh9YDzJYMaxeQOaGuXkTqZBRA6yaCbHIV7uqbsr2RalG6t/2Kmu4hY3DVcg+ydQ3sJgNIUe0Y3rMcKcIvyXBTPQuGscIRflAISWmg3g94oj1SxgeLZePMlLelAZjeYzuaXw4QW3MJQTuXe/UQ3rO35vplApofBqxUok51G6rMKUSs5v4uIAughoEM3LFlAZZQZm5kwzMSDRIHfY1PJKQk5Gt4P5qeL7b5oAHFNfRzAoUr5Wi5RdpQHYz+nZAETreI+AHTYgXM4ZthiM1RoQsqK4+xhQB6u8q3c4EQkvI+Jn2Xm+2Om/XrJGJFQHxEdyb8zqoVvVsCDiwYQ10IvACTzuGJjlmt0oREJ+Z4B8AOAKAixOXaCooSfI8ZZ8S5D3jHG5pwHOMbAdyLSIGzL9yNghkEfMXOjQtjIwBXyWZFdTNRMQPtcQOe8D4hr6rsA7p7HqJp85CoF4lH1UzBklfVSc3UlVr6h8RIAAAtfinrl6qtS4Fxdi+c2D3sAtHok+kvzx4hHYMxyw/WtsA/AowR8BXg0sK7d8hXgGpVHO/oK8GhgXbvlK8A1Ko929BXg0cC6dstXgGtUHu3oK8CjgXXtlq8A16g82vFfwx5yXxq/mYIAAAAASUVORK5CYII="
+                                        alt="beta" />
+                                </span>
+                            </label>
+                            <div class="fieldDescription">勾选后，刮削会变慢，适合刮削大量影片时使用，建议搭配网站cookie一起使用</div>
+                        </div>
+                        <div class="inputContainer">
+                            <label class="inputLabel inputLabelUnfocused" for="DoubanImageProxyBaseUrl">豆瓣图片代理地址</label>
+                            <input id="DoubanImageProxyBaseUrl" name="DoubanImageProxyBaseUrl" type="text"
+                                is="emby-input" placeholder="https://jellyfin.xxx.com:8920" />
+                            <div class="fieldDescription">
+                                可为空，填写jellyfin访问域名（有端口时要加上端口），只有使用了Nginx代理、Docker部署或启用了HTTPS，并且豆瓣图片无法显示时，才需要填写
+                            </div>
+                        </div>
+                        <div class="checkboxContainer checkboxContainer-withDescription">
+                            <label class="emby-checkbox-label" for="EnableDoubanLargePoster">
+                                <input id="EnableDoubanLargePoster" name="EnableDoubanLargePoster" type="checkbox"
+                                    is="emby-checkbox" />
+                                <span>海报使用大图</span>
+                            </label>
+                        </div>
+                        <div class="checkboxContainer checkboxContainer-withDescription">
+                            <label class="emby-checkbox-label" for="EnableDoubanBackdropRaw">
+                                <input id="EnableDoubanBackdropRaw" name="EnableDoubanBackdropRaw" type="checkbox"
+                                    is="emby-checkbox" />
+                                <span>背景图使用原图</span>
+                            </label>
+                            <div class="fieldDescription">原图豆瓣限制更严格，一般不建议开启</div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="verticalSection verticalSection-extrabottompadding">
+                        <legend>
+                            <h3>TheMovieDb</h3>
+                        </legend>
+                        <div class="checkboxContainer checkboxContainer-withDescription">
+                            <label class="emby-checkbox-label" for="EnableTmdb">
+                                <input id="EnableTmdb" name="EnableTmdb" type="checkbox" is="emby-checkbox" />
+                                <span>启用从TheMovieDb获取元数据</span>
+                            </label>
+                            <div class="fieldDescription">勾选后，会尝试从TheMovieDb获取剧集元数据</div>
+                        </div>
+                        <div class="checkboxContainer checkboxContainer-withDescription">
+                            <label class="emby-checkbox-label" for="EnableTmdbSearch">
+                                <input id="EnableTmdbSearch" name="EnableTmdbSearch" type="checkbox"
+                                    is="emby-checkbox" />
+                                <span>显示TheMovieDb搜索结果</span>
+                            </label>
+                            <div class="fieldDescription">勾选后，识别时会同时返回TheMovieDb搜索结果</div>
+                        </div>
+                        <div class="checkboxContainer checkboxContainer-withDescription">
+                            <label class="emby-checkbox-label" for="EnableTmdbBackdrop">
+                                <input id="EnableTmdbBackdrop" name="EnableTmdbBackdrop" type="checkbox"
+                                    is="emby-checkbox" />
+                                <span>使用TheMovieDb补全背景图</span>
+                            </label>
+                            <div class="fieldDescription">勾选后，当影片在豆瓣找不到背景图时，改使用TheMovieDb的补全</div>
+                        </div>
+                        <div class="checkboxContainer checkboxContainer-withDescription">
+                            <label class="emby-checkbox-label" for="EnableTmdbLogo">
+                                <input id="EnableTmdbLogo" name="EnableTmdbLogo" type="checkbox"
+                                    is="emby-checkbox" />
+                                <span>从TheMovieDb获取商标</span>
+                            </label>
+                            <div class="fieldDescription">勾选后，使用TheMovieDb的商标图片补全</div>
+                        </div>
+                        <div class="checkboxContainer checkboxContainer-withDescription">
+                            <label class="emby-checkbox-label" for="EnableTmdbOfficialRating">
+                                <input id="EnableTmdbOfficialRating" name="EnableTmdbOfficialRating" type="checkbox"
+                                    is="emby-checkbox" />
+                                <span>从TheMovieDb获取影片分级信息</span>
+                            </label>
+                            <div class="fieldDescription">勾选后，刮削会变慢</div>
+                        </div>
+                        <div class="checkboxContainer checkboxContainer-withDescription">
+                            <label class="emby-checkbox-label" for="EnableTmdbCollection">
+                                <input id="EnableTmdbCollection" name="EnableTmdbCollection" type="checkbox"
+                                    is="emby-checkbox" />
+                                <span>根据TheMovieDb电影系列信息自动创建合集</span>
+                            </label>
+                            <div class="fieldDescription">勾选后，会自动创建电影系列合集（和媒体库配置中的<b>自动添加到合集</b>功能冲突，需要先关闭）</div>
+                        </div>
+                        
+                        <div class="inputContainer">
+                            <label class="inputLabel inputLabelUnfocused" for="TmdbApiKey">Api Key</label>
+                            <input id="TmdbApiKey" name="TmdbApiKey" type="text" is="emby-input" />
+                            <div class="fieldDescription">填写自定义Api Key，不填写会使用默认api key.(需重启才能生效)</div>
+                        </div>
+                        <div class="inputContainer">
+                            <label class="inputLabel inputLabelUnfocused" for="TmdbHost">Api Host</label>
+                            <input id="TmdbHost" name="TmdbHost" type="text" is="emby-input"
+                                placeholder="api.tmdb.org" />
+                            <div class="fieldDescription">
+                                填写Api域名，可选api.tmdb.org/api.themoviedb.org，默认api.tmdb.org.(需重启才能生效)</div>
+                        </div>
+                        <div class="selectContainer">
+                            <label class="selectLabel" for="TmdbProxyType">Api代理服务器：</label>
+                            <select is="emby-select" id="TmdbProxyType" name="TmdbProxyType"
+                                class="TmdbProxyType emby-select-withcolor emby-select">
+                                <option value="">禁用</option>
+                                <option value="http">HTTP</option>
+                                <option value="https">HTTPS</option>
+                                <option value="socks5">Socks5</option>
+                            </select>
+                            <div class="fieldDescription">
+                                选择Api代理服务器类型.(需重启才能生效)</div>
+                        </div>
+                        <div class="inputContainer tmdb-proxy-wapper">
+                            <label class="inputLabel inputLabel-float inputLabelUnfocused"
+                                for="TmdbProxyHost">Api代理服务器Host:</label>
+                            <input is="emby-input" id="TmdbProxyHost" name="TmdbProxyHost" class="emby-input">
+                        </div>
+                        <div class="inputContainer tmdb-proxy-wapper">
+                            <label class="inputLabel inputLabel-float inputLabelUnfocused"
+                                for="TmdbProxyPort">Api代理服务器端口:</label>
+                            <input is="emby-input" type="number" id="TmdbProxyPort" name="TmdbProxyPort"
+                                pattern="[0-9]*" min="1" max="65535" class="emby-input">
+                        </div>
+                    </fieldset>
+                    <button is="emby-button" type="submit" class="raised button-submit block emby-button">
+                        <span>Save</span>
+                    </button>
+
+                </form>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var TemplateConfig = {
+                pluginUniqueId: '528D1027-019C-44C4-A45F-3A92E6E20C1D'
+            };
+
+            document.querySelector('#TemplateConfigPage')
+                .addEventListener('pageshow', function () {
+                    console.log('metashark pageshow');
+                    Dashboard.showLoadingMsg();
+                    ApiClient.getPluginConfiguration(TemplateConfig.pluginUniqueId).then(function (config) {
+                        $('#current_version').text("v" + config.Version);
+
+                        document.querySelector('#DoubanCookies').value = config.DoubanCookies;
+                        document.querySelector('#DoubanImageProxyBaseUrl').value = config.DoubanImageProxyBaseUrl;
+                        document.querySelector('#EnableDoubanAvoidRiskControl').checked = config.EnableDoubanAvoidRiskControl;
+                        document.querySelector('#EnableDoubanLargePoster').checked = config.EnableDoubanLargePoster;
+                        document.querySelector('#EnableDoubanBackdropRaw').checked = config.EnableDoubanBackdropRaw;
+
+                        document.querySelector('#EnableTmdb').checked = config.EnableTmdb;
+                        document.querySelector('#EnableTmdbSearch').checked = config.EnableTmdbSearch;
+                        document.querySelector('#EnableTmdbBackdrop').checked = config.EnableTmdbBackdrop;
+                        document.querySelector('#EnableTmdbLogo').checked = config.EnableTmdbLogo;
+                        document.querySelector('#EnableTmdbCollection').checked = config.EnableTmdbCollection;
+                        document.querySelector('#EnableTmdbOfficialRating').checked = config.EnableTmdbOfficialRating;
+                        document.querySelector('#TmdbApiKey').value = config.TmdbApiKey;
+                        document.querySelector('#TmdbHost').value = config.TmdbHost;
+
+                        document.querySelector('#TmdbProxyType').value = config.TmdbProxyType;
+                        document.querySelector('#TmdbProxyHost').value = config.TmdbProxyHost;
+                        document.querySelector('#TmdbProxyPort').value = config.TmdbProxyPort;
+
+                        changeProxyDisplay();
+                        checkDoubanLogin();
+
+                        Dashboard.hideLoadingMsg();
+                    });
+                });
+
+            document.querySelector('#TemplateConfigForm')
+                .addEventListener('submit', function (e) {
+                    Dashboard.showLoadingMsg();
+                    ApiClient.getPluginConfiguration(TemplateConfig.pluginUniqueId).then(function (config) {
+                        config.DoubanCookies = document.querySelector('#DoubanCookies').value;
+                        config.DoubanImageProxyBaseUrl = document.querySelector('#DoubanImageProxyBaseUrl').value;
+                        config.EnableDoubanAvoidRiskControl = document.querySelector('#EnableDoubanAvoidRiskControl').checked;
+                        config.EnableDoubanLargePoster = document.querySelector('#EnableDoubanLargePoster').checked;
+                        config.EnableDoubanBackdropRaw = document.querySelector('#EnableDoubanBackdropRaw').checked;
+
+                        config.EnableTmdb = document.querySelector('#EnableTmdb').checked;
+                        config.EnableTmdbSearch = document.querySelector('#EnableTmdbSearch').checked;
+                        config.EnableTmdbBackdrop = document.querySelector('#EnableTmdbBackdrop').checked;
+                        config.EnableTmdbLogo = document.querySelector('#EnableTmdbLogo').checked;
+                        config.EnableTmdbCollection = document.querySelector('#EnableTmdbCollection').checked;
+                        config.EnableTmdbOfficialRating = document.querySelector('#EnableTmdbOfficialRating').checked;
+                        config.TmdbApiKey = document.querySelector('#TmdbApiKey').value;
+                        config.TmdbHost = document.querySelector('#TmdbHost').value;
+                        config.TmdbProxyType = document.querySelector('#TmdbProxyType').value;
+                        config.TmdbProxyHost = document.querySelector('#TmdbProxyHost').value;
+                        config.TmdbProxyPort = document.querySelector('#TmdbProxyPort').value;
+                        ApiClient.updatePluginConfiguration(TemplateConfig.pluginUniqueId, config).then(function (result) {
+                            Dashboard.processPluginConfigurationUpdateResult(result);
+
+                            checkDoubanLogin();
+                        });
+                    });
+
+                    e.preventDefault();
+                    return false;
+                });
+
+            document.querySelector('#TmdbProxyType')
+                .addEventListener('change', function (e) {
+                    changeProxyDisplay();
+                });
+
+
+            function changeProxyDisplay() {
+                let proxyType = document.querySelector('#TmdbProxyType').value;
+                if (proxyType) {
+                    $('.tmdb-proxy-wapper').show()
+                } else {
+                    $('.tmdb-proxy-wapper').hide()
+                }
+            }
+
+            function checkDoubanLogin() {
+                let cookie = document.querySelector('#DoubanCookies').value
+                if (!cookie || !$.trim(cookie)) {
+                    $('#login_msg').hide();
+                    return;
+                }
+
+
+                $.getJSON("/plugin/metashark/douban/checklogin", function (resp) {
+                    if (resp && resp.code != 1) {
+                        $('#login_msg').css("color", "red").text('(已失效)').show();
+                    } else {
+                        $('#login_msg').css("color", "").text('(已生效)').show();
+                    }
+                })
+            }
+        </script>
+    </div>
+</body>
+
+</html>
